@@ -1,4 +1,5 @@
- let get = document.getElementById('get');
+let get = document.getElementById('get');
+
 get.addEventListener('click', async () => {
 
     const dateAndTimeNow = new Date();
@@ -8,7 +9,8 @@ get.addEventListener('click', async () => {
     const response = await fetch(`https://api.porssisahko.net/v1/price.json?date=${date}&hour=${hour}`, {
         method: "GET"
     })
-    const price = await response.json();
-    console.log(price);
-    return price;
+    const data = await response.json();
+    console.log(data);
+
+    document.getElementById('price').innerHTML = `${data.price} c/kWh`;
 });
