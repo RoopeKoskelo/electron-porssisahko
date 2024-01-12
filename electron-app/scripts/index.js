@@ -1,7 +1,4 @@
-const electron = require('electron');
-// Importing the net Module from electron remote
- 
-let get = document.getElementById('get');
+ let get = document.getElementById('get');
 get.addEventListener('click', async () => {
 
     const dateAndTimeNow = new Date();
