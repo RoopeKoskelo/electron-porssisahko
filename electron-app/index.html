@@ -6,15 +6,18 @@
     <title>Document</title>
 </head>
 <body class="mainBody">
-    <h1 class="smallHeader">Sähkön hinta</h1>
+    <h1 id="pricenow" class="smallHeader">Sähkön hinta</h1>
     <div class="container">
-        <div class="contentFrame">
-            <div class="topbar">
-                <button id="get" class="navbarLink">
-                    Hae hinta
-                </button>
-            </div>         
-            <div class="smallHeader"><span id="price"></span></div>
+        <div class="contentFrame">      
+            <div class="smallHeader">
+                <table id="price">
+                    <tr>
+                        <th>Päivä</th>
+                        <th>Tunti</th>
+                        <th>Hinta</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <marquee class="bottomScroll" behavior="scroll" scrollamount="3" direction="left">This app is using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, and Electron <span id="electron-version"></span></marquee>
