@@ -38,8 +38,27 @@ async function getPriceNow(){
 
 }
 
+async function checkTime(){                     // i should be hanged for this
+    const timeNow = new Date()
+    let hoursNow = timeNow.getHours()
+    let minutesNow = timeNow.getMinutes()
+    let secondsNow = timeNow.getSeconds()
+
+    console.log(hoursNow + "." + minutesNow + ":" + secondsNow);
+
+    if (minutesNow === 0 && secondsNow === 1){
+        getPriceNow();
+        window.location.reload();
+    } else if (hoursNow === 14 && minutesNow === 30 && secondsNow === 1){
+        getPrice48h();
+        window.location.reload();
+    };    
+}
+
 window.addEventListener('load', async () => {
     //fetch prices on load
     getPriceNow();
     getPrice48h();
+
+    setInterval(checkTime, 1000);
 });
