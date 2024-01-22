@@ -44,7 +44,9 @@ async function checkTime(){                     // i should be hanged for this
     let minutesNow = timeNow.getMinutes()
     let secondsNow = timeNow.getSeconds()
 
-    console.log(hoursNow + "." + minutesNow + ":" + secondsNow);
+    clocktime = hoursNow + "." + minutesNow + ":" + secondsNow;
+
+    document.getElementById('clock').innerHTML = clocktime
 
     if (minutesNow === 0 && secondsNow === 1){
         getPriceNow();
